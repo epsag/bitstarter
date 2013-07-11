@@ -1,4 +1,4 @@
-var strout = new Buffer(readFileSync('index.html'));
+// var strout = new Buffer(readFileSync('index.html'));
 // var buf = new Buffer(strout)
 
 var express = require('express');
@@ -6,8 +6,10 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
+  var fs = require('fs');
+  var buf = new Buffer(readFileSync('index.html');
 //  response.send('Hello World 2!');
-  response.send(strout.toString());
+  response.send(buf.toString());
 });
 
 var port = process.env.PORT || 5000;
